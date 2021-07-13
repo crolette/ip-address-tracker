@@ -3,8 +3,7 @@ let ipAddress = document.querySelector("#ip-address");
 let ipLocation = document.querySelector("#ip-location");
 let ipTimezone = document.querySelector("#ip-timezone");
 let formIP = document.querySelector("form");
-
-var myIcon = L.icon({
+let myIcon = L.icon({
     iconUrl: './images/icon-location.svg',
 });
 
@@ -26,7 +25,7 @@ function callApi() {
       addInfos(data);
       addMap(data);
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error.code));
 }
 
 function addInfos(data) {
